@@ -1,0 +1,68 @@
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+body{
+  width:100vw;
+  height:100%;
+  font-style:sans-serif;
+  
+}
+.row{
+  margin:10px;
+  padding:15px;
+  width:15rem;
+  height:10rem;
+  background-color:bisque;
+  text-align:center;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+input[type="text"]{
+  margin:15px;
+  width:15rem;
+  height:3rem;
+  padding-left:5px;
+  outline:none;
+  border:2px solid #ccc;
+}
+textarea{
+  margin:15px;
+  width:15rem;
+  height:6rem;
+  padding-left:5px;
+  outline:none;
+  border:2px solid #ccc;
+}
+.add{
+  height:2rem;
+  width:5rem;
+  outline:none;
+  background-color:rgb(98, 98, 233);
+  letter-spacing:1px;
+  border:1.5px solid black;
+  cursor:pointer;
+}
+.delete{
+  height:2rem;
+  width:4rem;
+  outline:none;
+  background-color:rgb(233, 98, 98);
+  letter-spacing:1px;
+  border:1.5px solid black;
+  cursor:pointer
+}
+.blog{
+  width:25rem;
+  background-color:lightseagreen;
+  border-radius:10px;
+  padding:12px;
+
+}
+
+
+
+
