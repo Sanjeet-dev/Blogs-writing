@@ -11,6 +11,15 @@ function App() {
   const titleRef = useRef();
 
   useEffect(()=>{
+    if(blogs.length && blogs[0].title){
+      document.title = blogs[0].title;
+    }
+    else{
+      document.title = "No Blogs!!";
+    }
+  },[blogs]);
+
+  useEffect(()=>{
     titleRef.current.focus();
   },[]);
 
