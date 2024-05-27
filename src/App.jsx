@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import Row from './components/Row.jsx'
 import './App.css'
 
@@ -8,6 +8,11 @@ function App() {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   // const [formData, setFormData] = useState({title: "", content:""});
+  const titleRef = useRef();
+
+  useEffect(()=>{
+    titleRef.current.focus();
+  },[]);
 
   function handleSubmit(e){
     e.preventDefault()
@@ -15,6 +20,7 @@ function App() {
     console.log(blogs);
     setTitle("");
     setContent("");
+    titleRef.current.focus();
     // setContent("");
     // setBlogs([{title:formData.title, content:formData.content}, ...blogs]);
     // setFormData({title:"", content:""});
@@ -35,6 +41,7 @@ function App() {
       <input type="text"
       placeholder='title goes here...'
       value={title}
+      ref={titleRef}
       onChange={(e) => setTitle(e.target.value)}
       // onChange={(e)=> setFormData({title:e.target.value, content:formData.content})}
       />
