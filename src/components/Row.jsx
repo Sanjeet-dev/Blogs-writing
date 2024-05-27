@@ -4,7 +4,7 @@ function Row(props){
     return (
         <>
         <div className="row">
-        <label>{props.label}</label>
+        <label>{label}</label>
         <br />
         {props.children}
         <hr />

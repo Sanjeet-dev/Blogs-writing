@@ -1,8 +1,7 @@
 
 #root {
   max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  
 }
 body{
   width:100vw;
@@ -10,32 +9,45 @@ body{
   font-style:sans-serif;
   
 }
+.App{
+  width:100vw;
+  height:60%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  margin-left:7rem;
+
+}
 .row{
   margin:10px;
-  padding:15px;
-  width:15rem;
-  height:10rem;
+  padding:25px;
+  width:35rem;
   background-color:bisque;
   text-align:center;
   display:flex;
+  flex-direction: column;
   justify-content:center;
   align-items:center;
 }
 input[type="text"]{
   margin:15px;
-  width:15rem;
-  height:3rem;
+  width:23rem;
+  height:2rem;
   padding-left:5px;
   outline:none;
   border:2px solid #ccc;
+  font-size:18px;
+  color:rgb(53, 34, 34);
 }
 textarea{
   margin:15px;
-  width:15rem;
+  width:20rem;
   height:6rem;
   padding-left:5px;
   outline:none;
   border:2px solid #ccc;
+  font-size:16px;
+  color:rgb(75, 55, 55);
 }
 .add{
   height:2rem;
@@ -45,6 +57,10 @@ textarea{
   letter-spacing:1px;
   border:1.5px solid black;
   cursor:pointer;
+  border-radius:7px;
+  position:absolute;
+  right:25%;
+  bottom:55%;
 }
 .delete{
   height:2rem;
@@ -53,13 +69,17 @@ textarea{
   background-color:rgb(233, 98, 98);
   letter-spacing:1px;
   border:1.5px solid black;
-  cursor:pointer
+  cursor:pointer;
+  border-radius:4px;
+  margin-left:30rem;
 }
 .blog{
-  width:25rem;
+  width:40rem;
   background-color:lightseagreen;
   border-radius:10px;
   padding:12px;
+  margin-bottom:10px;
+  margin-left:12rem;
 
 }
 

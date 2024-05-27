@@ -5,45 +5,69 @@ import './App.css'
 function App() {
 
   const [blogs, setBlogs] = useState([]);
-  const [formData, setFormData] = useState({title: "", content:""});
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
+  // const [formData, setFormData] = useState({title: "", content:""});
 
   function handleSubmit(e){
     e.preventDefault()
-    setBlogs([{title:formData.title, content:formData.content}, ...blogs]);
-    setFormData({title:"", content:""});
+    setBlogs([{title,content}, ...blogs]);
+    console.log(blogs);
+    setTitle("");
+    setContent("");
+    // setContent("");
+    // setBlogs([{title:formData.title, content:formData.content}, ...blogs]);
+    // setFormData({title:"", content:""});
   }
+  function removeBlog(rm_index){
+    setBlogs(blogs.filter((blog,index)=>  index !== rm_index))
+  }
+
 
   return (
     <>
   <div className='App'>
+    <h1>Write a Blog!</h1>
+    
     <form onSubmit={handleSubmit}>
     
     <Row label="Title">
-      <input type="text" 
-      onChange={(e)=> setFormData({title:e.target.value, content:formData.content})}
+      <input type="text"
+      placeholder='title goes here...'
+      value={title}
+      onChange={(e) => setTitle(e.target.value)}
+      // onChange={(e)=> setFormData({title:e.target.value, content:formData.content})}
       />
     </Row>
+    
     <Row label="Content">
     <textarea
-    onChange={(e) => setFormData({title:formData.title, content:e.target.value})}
-    ></textarea>
+    placeholder='content goes here..'
+    value={content}
+    onChange={(e)=> setContent(e.target.value)}
+    // onChange={(e) => setFormData({title:formData.title, content:e.target.value})}
+    >{content}</textarea>
     
     </Row>
     < br/>
     <button className="add">ADD</button>
     </form>
+
+    </div>
     <h2>Blogs</h2>
   
   {blogs.map((blog, i)=>(
-    <div className="blog">
+    <div className="blog" key={i}>
       <h2>{blog.title}</h2>
       <p>{blog.content}</p>
 
-      <button>DELETE</button>
+      <button className="delete"
+        onClick={()=> removeBlog(i)}
+      >
+        DELETE
+        </button>
     </div>
-  ))}
-
-    </div>
+     ))}
     </>
   )
 }
